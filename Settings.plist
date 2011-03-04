@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>DefaultValue</key>
+		<real>1</real>
+		<key>Key</key>
+		<string>startDay</string>
+		<key>Title</key>
+		<string>Week starts on</string>
+		<key>Titles</key>
+		<array>
+			<string>Sunday</string>
+			<string>Monday</string>
+			<string>Saturday</string>
+		</array>
+		<key>Type</key>
+		<string>PopUpButton</string>
+		<key>Values</key>
+		<array>
+			<real>7</real>
+			<real>1</real>
+			<real>6</real>
+		</array>
+	</dict>
+</array>
+</plist>

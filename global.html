@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>global HTML page</title>
+<script type="text/javascript">
+var styleSheetURL = '';
+
+// do the leg work, when the script asks us to
+function respondToMessage(theMessageEvent) {
+	if (theMessageEvent.name === "getStartDay")
+		changeCss();
+}
+
+//remove and reinsert CSS
+function changeCss() {
+	if (styleSheetURL != '') 
+		safari.extension.removeContentStyleSheet(styleSheetURL);
+	styleSheetURL = safari.extension.addContentStyleSheet(getCss());
+}
+
+//react to setting change
+function settingChanged(event) {
+	if (event.key == "startDay") {
+		changeCss();
+	}
+}
+
+// support function to generate CSS
+function getCss() {
+	var start_day = safari.extension.settings.startDay;
+
+	if (start_day == 7) {
+		// sunday start
+		saturday = 7;
+		sunday = 1;
+
+	} else if (start_day == 6) {
+		// saturday start
+		saturday = 1;
+		sunday = 2;
+
+	} else {
+		// monday start
+		saturday = 6;
+		sunday = 7;
+	}
+
+	return '.tg-weekend, div.month-row > table.st-bg-table tr > td:nth-child('+ saturday +'), div.month-row > table.st-bg-table tr > td:nth-child('+ sunday +') { background-color: #eeeef0; }';
+}
+
+safari.application.addEventListener("message", respondToMessage, false);
+safari.extension.settings.addEventListener("change", settingChanged, false);
+</script>
+</head>
+<body>
+</body>
+</html>
