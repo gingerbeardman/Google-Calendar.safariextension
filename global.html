@@ -45,7 +45,7 @@ function getCss() {
 		sunday = 7;
 	}
 
-	return '.tg-weekend, div.month-row > table.st-bg-table tr > td:nth-child('+ saturday +'), div.month-row > table.st-bg-table tr > td:nth-child('+ sunday +') { background-color: #eeeef0; }';
+	return '.st-bg-table tr td:nth-child('+ saturday +'), .st-bg-table tr td:nth-child('+ sunday +') { background-color: #eeeef0 !important; }';
 }
 
 safari.application.addEventListener("message", respondToMessage, false);
