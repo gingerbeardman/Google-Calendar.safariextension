@@ -3,6 +3,9 @@ Google Calendar.safariextension
 
 Safari extension to change the background colour of Saturdays and Sundays on Google Calendar
 
+##Download
+[Google Calendar.safariextz](http://www.gingerbeardman.com/safari/Google%20Calendar.safariextz)
+
 ## Changelog
 2011-07-01  
 Updated for new-look Google Calendar (1.1)
